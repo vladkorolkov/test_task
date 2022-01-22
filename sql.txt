@@ -1,0 +1,89 @@
+CREATE TABLE product (
+    id INT NOT NULL IDENTITY PRIMARY KEY,
+    product_name VARCHAR(50),
+    price DECIMAL(18,2)
+)
+
+
+INSERT INTO product (product_name,price)
+VALUES ('bread', '70')
+INSERT INTO product (product_name,price)
+VALUES ('cocacola', '20')
+INSERT INTO product (product_name,price)
+VALUES ('sugar', '12')
+INSERT INTO product (product_name,price)
+VALUES ('milk', '45')
+INSERT INTO product (product_name,price)
+VALUES ('tshirt', '750')
+INSERT INTO product (product_name,price)
+VALUES ('hat', '1500')
+INSERT INTO product (product_name,price)
+VALUES ('shoes', '2300')
+INSERT INTO product (product_name,price)
+VALUES ('red_box', '15')
+INSERT INTO product (product_name,price)
+VALUES ('pencil', '34')
+INSERT INTO product (product_name,price)
+VALUES ('laptop','250000')
+
+
+
+CREATE TABLE category (
+    id INT NOT NULL IDENTITY PRIMARY KEY,
+    cat_name VARCHAR(50),
+)
+
+INSERT INTO category (cat_name)
+VALUES ('meal')
+INSERT INTO category (cat_name)
+VALUES ('wear')
+INSERT INTO category (cat_name)
+VALUES ('gifts')
+
+
+
+CREATE TABLE all_products_in_shop (
+    product_id INT NOT NULL,
+    cat_id INT,
+
+    FOREIGN KEY (product_id) REFERENCES product (id),
+    FOREIGN KEY (cat_id) REFERENCES category (id)
+)
+
+INSERT INTO all_products_in_shop
+VALUES ('1', '1')
+INSERT INTO all_products_in_shop
+VALUES ('2', '1')
+INSERT INTO all_products_in_shop
+VALUES ('3', '1')
+INSERT INTO [all_products_in_shop
+VALUES ('4', '1') 
+INSERT INTO [all_products_in_shop
+VALUES ('5', '2') 
+INSERT INTO [all_products_in_shop
+VALUES ('6', '2') 
+INSERT INTO all_products_in_shop
+VALUES ('7', '2') 
+INSERT INTO all_products_in_shop
+VALUES ('4', '2') 
+INSERT INTO all_products_in_shop
+VALUES ('4', '2') 
+INSERT INTO all_products_in_shop
+VALUES ('8', '3') 
+INSERT INTO all_products_in_shop
+VALUES ('9', '3') 
+INSERT INTO all_products_in_shop
+VALUES ('5', '3') 
+INSERT INTO all_products_in_shop
+VALUES ('2', '3') 
+INSERT INTO all_products_in_shop
+VALUES ('10', '3') 
+
+
+
+SELECT product_name,cat_name FROM all_products_in_shop 
+LEFT JOIN product 
+ON all_products_in_shop.product_id = product.id 
+JOIN category 
+ON all_products_in_shop.cat_id = category.id
+
