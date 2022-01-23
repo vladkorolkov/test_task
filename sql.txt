@@ -1,3 +1,5 @@
+//Microsoft SQL (Azure) Запросы писал в Azure Data Studio
+
 CREATE TABLE product (
     id INT NOT NULL IDENTITY PRIMARY KEY,
     product_name VARCHAR(50),
