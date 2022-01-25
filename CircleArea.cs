@@ -6,13 +6,7 @@ public static class CircleArea
     const double PI = Math.PI;
     private static double Operation(double r)
     {
-        double S = 0;
-
-        if (S > 0)
-        {
-            S = PI * Math.Pow(r, 2);
-        }
-        Error("Ошибка.Проверьте исходные данные.");
+        double S = PI * Math.Pow(r, 2);              
         return S;
     }
 
