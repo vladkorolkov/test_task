@@ -10,10 +10,6 @@ public static class CircleArea
         return S;
     }
 
-    private static void Error(string message)
-    {
-        Console.WriteLine(message);
-    }
     public static double GetCircleArea(int r)
     {
         double result = Operation((double)r);
